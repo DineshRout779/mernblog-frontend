@@ -1,0 +1,189 @@
+:root {
+  --sky-blue: #3085f5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+}
+
+body {
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0.5em 0;
+}
+
+p {
+  margin: 0.5em 0;
+}
+
+img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.container {
+  width: 90%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* flexbox */
+
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-right {
+  justify-content: right;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-3 {
+  flex: 3;
+}
+
+.flex-6 {
+  flex: 6;
+}
+
+.col {
+  margin: 1em 0;
+}
+
+.col + .col {
+  margin-left: 1em;
+  border-left: 1px solid #ccc;
+}
+
+/* grid */
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1em;
+}
+
+/* icons */
+.fab {
+  font-size: 1.5em;
+  margin-right: 0.4em;
+  color: white;
+}
+
+/* height */
+
+.height-90 {
+  min-height: 90vh;
+}
+
+/* text */
+
+.text-large {
+  font-size: 6em;
+  margin: 0;
+}
+
+.text-small {
+  font-size: 2.5em;
+  margin: 0;
+}
+
+/* form */
+
+.form {
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 2em;
+  box-shadow: 0 0 16px 0 rgb(243, 238, 238);
+  border-radius: 4px;
+}
+
+.form h3 {
+  text-align: center;
+}
+
+.form-group {
+  margin: 1em 0;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.5em;
+  margin-top: 0.3em;
+  font-size: 16px;
+  border-radius: 2px;
+  border: 1px solid var(--sky-blue);
+  outline: none;
+}
+
+.btn {
+  color: #fff;
+  cursor: pointer;
+  color: white;
+  margin-left: 1em;
+  padding: 0.4em 1em;
+  background-color: var(--sky-blue);
+  border: none;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+.btn-submit {
+  margin: 0;
+}
+
+.btn:disabled {
+  background-color: rgb(175, 201, 235);
+  cursor: not-allowed;
+}
+
+.tag {
+  background-color: rgb(238, 225, 225);
+  padding: 0.2em 0.4em;
+  font-size: 0.8em;
+}
+
+.time {
+  text-transform: uppercase;
+  color: rgb(138, 125, 125);
+  font-size: 10px;
+}
+
+/* media queries */
+
+@media (max-width: 1080px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

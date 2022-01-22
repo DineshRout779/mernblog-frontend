@@ -1,0 +1,53 @@
+:root {
+  --sky-blue: #3085f5;
+}
+
+.top {
+  padding: 1em 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #fff;
+  box-shadow: 0 0 10px 0 rgb(196, 191, 191);
+}
+
+.navList a {
+  text-decoration: none;
+  padding: 0.5em;
+}
+
+.nav-link {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  color: var(--sky-blue);
+}
+
+.nav-link + .nav-link {
+  margin-left: 1em;
+}
+
+.navList li a + .navList line a {
+  margin-left: 1em;
+}
+
+.profile {
+  text-decoration: none;
+}
+
+.profile-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: white;
+  color: var(--sky-blue);
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.searchIcon {
+  padding: 1em;
+  color: white;
+}
