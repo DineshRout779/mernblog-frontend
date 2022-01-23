@@ -13,7 +13,7 @@ const Topbar = () => {
   };
 
   return (
-    <div className='top'>
+    <header>
       <div className='container'>
         <div className='flex align-center justify-between'>
           {user ? (
@@ -54,7 +54,7 @@ const Topbar = () => {
           )}
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 
