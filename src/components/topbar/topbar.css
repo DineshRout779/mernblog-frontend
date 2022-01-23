@@ -2,7 +2,9 @@
   --sky-blue: #3085f5;
 }
 
-.top {
+header {
+  display: block;
+  width: 100%;
   padding: 1em 0;
   position: sticky;
   top: 0;

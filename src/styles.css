@@ -1,5 +1,7 @@
 :root {
   --sky-blue: #3085f5;
+  --danger: #fa5656;
+  --success: #18ad18;
 }
 
 * {
@@ -70,6 +72,8 @@ img {
 }
 
 .col {
+  width: 100%;
+
   margin: 1em 0;
 }
 
@@ -82,8 +86,12 @@ img {
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 1em;
+}
+
+.grid .post {
+  display: block;
 }
 
 /* icons */
@@ -100,6 +108,10 @@ img {
 }
 
 /* text */
+
+.text-center {
+  text-align: center;
+}
 
 .text-large {
   font-size: 6em;
@@ -145,7 +157,6 @@ img {
   color: #fff;
   cursor: pointer;
   color: white;
-  margin-left: 1em;
   padding: 0.4em 1em;
   background-color: var(--sky-blue);
   border: none;
@@ -153,8 +164,30 @@ img {
   font-size: 1em;
 }
 
+.btn + .btn {
+  margin-left: 1em;
+}
+
+a + .btn {
+  margin-left: 1em;
+}
+
 .btn-submit {
   margin: 0;
+}
+
+.btn-danger {
+  background-color: var(--danger);
+}
+
+.btn-success {
+  background-color: var(--success);
+}
+
+.btn-secondary {
+  border: 1px solid var(--sky-blue);
+  color: var(--sky-blue);
+  background-color: #fff;
 }
 
 .btn:disabled {
@@ -174,6 +207,12 @@ img {
   font-size: 10px;
 }
 
+/* margins */
+
+.my-1 {
+  margin: 1em 0;
+}
+
 /* media queries */
 
 @media (max-width: 1080px) {
@@ -182,8 +221,12 @@ img {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 960px) {
   .grid {
     grid-template-columns: 1fr;
   }
+}
+
+.border {
+  border: 1px solid yellow;
 }
