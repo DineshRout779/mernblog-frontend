@@ -4,6 +4,7 @@ import 'react-quill/dist/quill.snow.css';
 import { useContext, useState } from 'react';
 import { Context } from '../../context/Context';
 import axios from 'axios';
+import { useNavigate } from 'react-router';
 
 const api_url = process.env.REACT_APP_API_URL;
 
@@ -13,6 +14,7 @@ const Write = () => {
   const [body, setBody] = useState('');
   const [error, setError] = useState(false);
   const { user } = useContext(Context);
+  const navigate = useNavigate();
 
   let categories = cats.split(',');
 
@@ -22,13 +24,13 @@ const Write = () => {
     if (!title || !body) setError(true);
     else {
       try {
-        const res = await axios.post(`${api_url}/posts`, {
+        const res = await axios.post(`${api_url}posts`, {
           title,
           desc: body,
-          username: user.username,
+          userId: user._id,
           categories,
         });
-        res.data && window.location.replace('/posts');
+        res.data && navigate('/posts');
       } catch (err) {
         console.log(err.response);
       }
