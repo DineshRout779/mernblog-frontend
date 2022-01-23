@@ -32,11 +32,10 @@ const Login = () => {
     else {
       dispatch({ type: 'LOGIN_START' });
       try {
-        const res = await axios.post(`${api_url}/auth/login`, user);
+        const res = await axios.post(`${api_url}auth/login`, user);
         dispatch({ type: 'LOGIN_SUCCESS', payload: res.data });
         navigate('/posts');
       } catch (err) {
-        console.log(err.response);
         setMessage(err.response.data.error);
         dispatch({ type: 'LOGIN_FAILURE' });
       }
@@ -73,7 +72,7 @@ const Login = () => {
         </div>
         <div className='form-group'>
           <button
-            className='form-control btn'
+            className='form-control btn btn-submit'
             type='submit'
             disabled={isFetching}
           >

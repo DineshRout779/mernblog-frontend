@@ -29,7 +29,7 @@ const Register = () => {
     if (!user.username || !user.email || !user.password) setError(true);
     else {
       try {
-        const res = await axios.post(`${api_url}/auth/register`, user);
+        const res = await axios.post(`${api_url}auth/register`, user);
         res.data && navigate('/login');
       } catch (err) {
         // setMessage(err.response);
@@ -79,8 +79,8 @@ const Register = () => {
           />
         </div>
         <div className='form-group'>
-          <button className='form-control btn' type='submit'>
-            Login
+          <button className='form-control btn btn-submit' type='submit'>
+            Register
           </button>
         </div>
         {error && <p>All fields are required!</p>}
