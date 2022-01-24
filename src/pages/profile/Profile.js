@@ -111,9 +111,21 @@ const Profile = () => {
           <div className='flex align-center'>
             <Avatar userProfile={userProfile} />
             {isEditing ? (
+              ''
+            ) : (
               <div>
+                <h4>{userData.username}</h4>
+                <p>{userData.email}</p>
+              </div>
+            )}
+          </div>
+          {isEditing && (
+            <div className='my-1'>
+              <div className='form-group'>
+                <label htmlFor='username'>Username</label>
                 <input
                   type='text'
+                  id={'username'}
                   value={userData.username}
                   onChange={(e) =>
                     setUserData({
@@ -123,9 +135,13 @@ const Profile = () => {
                   }
                   className='form-control'
                 />
+              </div>
+              <div className='form-group'>
+                <label htmlFor='email'>Email</label>
                 <input
                   type='email'
                   value={userData.email}
+                  id={'email'}
                   onChange={(e) =>
                     setUserData({
                       ...userData,
@@ -135,13 +151,26 @@ const Profile = () => {
                   className='form-control'
                 />
               </div>
-            ) : (
-              <div>
-                <h4>{userData.username}</h4>
-                <p>{userData.email}</p>
+              <div className='form-group'>
+                <label htmlFor='password'>
+                  Password <small>(leave empty if don't want to change)</small>
+                </label>
+                <input
+                  type='password'
+                  value={''}
+                  id={'password'}
+                  placeholder={'Enter new password'}
+                  onChange={(e) =>
+                    setUserData({
+                      ...userData,
+                      password: e.target.value,
+                    })
+                  }
+                  className='form-control'
+                />
               </div>
-            )}
-          </div>
+            </div>
+          )}
           <div>
             {isEditing ? (
               <div className='my-1'>
@@ -162,6 +191,7 @@ const Profile = () => {
           <div>
             {isDeleting ? (
               <div className='my-1'>
+                <p>Are you sure?</p>
                 <button
                   onClick={handleToggleDelete}
                   className='btn btn-secondary'
